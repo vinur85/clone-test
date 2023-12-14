@@ -21,5 +21,10 @@ pipeline {
                 echo "Testing app - jenkins automatic"
             }
         }
+        stage("Complete") {
+            steps {
+                echo "Job Complete - jenkins automatic"
+            }
+        }
     }
 }
