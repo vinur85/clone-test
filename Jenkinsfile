@@ -1,29 +1,24 @@
 pipeline {
     agent any
     stages {
-        stage("Stage 1") {
+        stage("Clean Up") {
             steps {
-                echo "This is stage 1"
+                deleteDir()
             }
         }
-        stage("Stage 2") {
+        stage("Clone repo") {
             steps {
-                echo "This is stage 2"
+                sh "git clone https://github.com/vinur85/clone-test.git"
             }
         }
-        stage("Stage 3") {
+        stage("Build") {
             steps {
-                echo "This is stage 3"
+                echo "Building app - jenkins automatic"
             }
         }
-        stage("Stage 4") {
+        stage("Test") {
             steps {
-                echo "This is stage 4"
-            }
-        }
-        stage("Stage 5") {
-            steps {
-                echo "This is stage 5"
+                echo "Testing app - jenkins automatic"
             }
         }
     }
